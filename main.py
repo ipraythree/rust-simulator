@@ -52,13 +52,3 @@ while True:
 
     else:
         print("Invalid choice.\n")
-
-# bu projede ilk defa py dosyalarini ayirdin ve tek dosyaya 300 satir yazmaktan kurtuldun
-# class kullanmayi ilk defa bugun ogrendin ve onu bundan onceki projede ilk defa kullandin
-# bu rust simulator v1in devami olan rust simulator v2 ikisini de bugun yazdin
-# suan arkada bu notu yazarken calan sarki black sabbath - war pigs
-# saat 12:14 AM tarih 8/2/2026 yani 2 agustos 2026
-# asla pes etme bi gun cok istedigin almanyadaki universiteyi kazanicaksin ve mezun olucaksin
-# umarim bu dosyayi acacak kadar yol katetmissindir ve bunlari okurken gulumsuyodundur :)
-# (arkada anlik olarak war pigsten sonra calan ve gojiranin en sevdigin (sevdigim mi artik kendime not dusmek kafa karistirici aq ) gojira - amazonia caliyo)
-# hadi ben bunu githuba repo atmaya gidiyom ilerde belki sirkete seni alirlarsa almani saglayan sey 16 yasinda emek edip calisman ve bugun bu repolari biriktirmen henuz 16 yasindan
