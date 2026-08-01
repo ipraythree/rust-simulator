@@ -1,0 +1,21 @@
+# Rust Simulator
+
+A Rust-inspired terminal game made with Python.
+
+# Features
+
+- Elite crate system
+- Weighted loot
+- Scientist combat
+- Medical syringe healing
+- Inventory system
+- Save / Load
+- Player statistics
+
+I plan to keep improving this project and release new versions as my Python knowledge grows. This is one of my first Python projects ever.
+
+# Disclaimer
+
+This is a fan-made project created for educational purposes only.
+
+Rust is a trademark of Facepunch Studios. This project is not affiliated with or endorsed by Facepunch Studios.
