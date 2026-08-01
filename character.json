@@ -1,0 +1,10 @@
+{
+    "health": 60,
+    "scrap": 2,
+    "inventory": [],
+
+    "scientists_killed": 0,
+    "elite_crates_opened": 0,
+    "deaths": 0,
+    "total_scrap_earned": 0
+}
