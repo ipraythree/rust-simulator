@@ -3,8 +3,10 @@ import random
 from collections import Counter
 from loot import (
     elite_crate_loot_pool_weights,
-    elite_crate_loot_pool
+    elite_crate_loot_pool,
+    RECYCLE_VALUES
 )
+from save import save
 
 class Player:
     def __init__(self):
@@ -17,22 +19,29 @@ class Player:
         self.total_scrap_earned = 0
 
     def open_elite_crate(self):
-        item = random.choices(
-            elite_crate_loot_pool,
-            weights = elite_crate_loot_pool_weights,
-            k=1
-        )[0]
-        print("Opening elite crate...")
-        time.sleep(2)
-        self.inventory.append(item)
+        scrap = random.randint(20, 60)
+        self.scrap += scrap
+        self.total_scrap_earned += scrap
+        loot_count = random.randint(2,4)
+        print("=====================\nOpening Elite Crate...\n=====================")
+        time.sleep(1)
+        print(f"+{scrap} Scrap")
+        print("\nYou found:")
+        for x in range(loot_count):
+            item = random.choices(
+                elite_crate_loot_pool,
+                weights = elite_crate_loot_pool_weights,
+            )[0]
+            print(f"• {item}")
+            self.inventory.append(item)
+            if item == "M249":
+                print(f"You are lucky today, you found: {item}!")
         self.elite_crates_opened += 1
-        if item == "M249":
-            print(f"You are lucky today, you found: {item}!")
-        else:
-            print(f"You found {item}!")
+
 
     def show_inventory(self):
         print("\n===== INVENTORY =====")
+        print(f"Scrap: {self.scrap}")
 
         if len(self.inventory) == 0:
             print("Inventory is empty.")
@@ -62,3 +71,47 @@ class Player:
         print(f"Total scrap earned : {self.total_scrap_earned}")
         print(f"Deaths : {self.deaths}")
         print("======================")
+
+    def recycle(self):
+        recycle = input("\nWhat item do you want to recycle?: ").lower()
+        for item in self.inventory:
+            if item.lower() == recycle:
+                scrap = RECYCLE_VALUES[item]
+
+                if scrap == 0:
+                    print("\nYou cant recycle this item!")
+                else:
+                    self.scrap += scrap
+                    self.total_scrap_earned += scrap
+                    self.inventory.remove(item)
+                    print(f"You recycled {item}!")
+                    print(f"\nYou got {scrap} Scrap.")
+
+                return
+
+        print("Item not found in inventory, maybe you made a typo?")
+
+    def bandit_camp(self):
+        while True:
+            print("\n===== BANDIT CAMP =====")
+
+            print(f"Current scrap: {self.scrap}")
+            print(f"\n1. Buy Medical Syringe (100 Scrap)")
+            print(f"\n2. Exit")
+
+            choice = input("\nWhat do you want to do?: ")
+            if choice == "1":
+                if self.scrap >= 100:
+                    self.inventory.append("Medical Syringe")
+                    self.scrap -= 100
+                    print("\nSuccessfully purchased a Medical Syringe!")
+                    print(f"\nCurrent scrap: {self.scrap}")
+                    save(self)
+                else:
+                    print("You dont have enough scrap!")
+            elif choice == "2":
+                print("\nLeaving Bandit Camp...")
+                break
+            else:
+                print("Invalid choice!")
+

@@ -20,7 +20,9 @@ while True:
     print("4. Use Medical Syringe")
     print("5. Show Current Health")
     print("6. Show Statistics")
-    print("7. Exit")
+    print("7. Recycler")
+    print("8. Bandit Camp")
+    print("9. Exit")
 
     choice = input("Choose: ")
 
@@ -45,10 +47,21 @@ while True:
         player.show_statistics()
 
     elif choice == "7":
+        player.show_inventory()
+        player.recycle()
+        save(player)
+
+    elif choice == "8":
+        player.bandit_camp()
+        save(player)
+
+    elif choice == "9":
         print("Saving...")
         save(player)
         print("Goodbye!")
         break
+
+
 
     else:
         print("Invalid choice.\n")
