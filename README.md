@@ -22,3 +22,5 @@ I plan to keep improving this project and release new versions as my Python know
 This is a fan-made project created for educational purposes only.
 
 Rust is a trademark of Facepunch Studios. This project is not affiliated with or endorsed by Facepunch Studios.
+
+<img width="294" height="337" alt="image" src="https://github.com/user-attachments/assets/60419dcb-81bb-4441-8505-1593ec5c73a0" />
