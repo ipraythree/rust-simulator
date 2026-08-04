@@ -7,11 +7,14 @@ A Rust-inspired terminal game made with Python.
 - Elite crate system
 - Weighted loot
 - Scientist combat
+- Recycler
+- Bandit Camp
 - Medical syringe healing
 - Inventory system
 - Save / Load
 - Player statistics
-
+- Scrap economy
+  
 I plan to keep improving this project and release new versions as my Python knowledge grows. This is one of my first Python projects ever.
 
 # Disclaimer
